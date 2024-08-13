@@ -29,7 +29,8 @@
       "cards",
       "columns",
       "accordion",
-      "table"
+      "table",
+      "search"
     ]
   },
   {
@@ -49,5 +50,9 @@
     "components": [
       "table-row"
     ]
+  },
+  {
+    "id":"search",
+    "components":[]
   }
 ]
