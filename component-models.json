@@ -301,10 +301,10 @@
     "id":"video",
     "fields":[
       {
-        "component": "text",
+        "component": "aem-content",
         "valueType": "string",
         "name": "uri",
-        "label": "Video link"
+        "label": "Video"
       },
       {
         "component": "multiselect",
@@ -328,7 +328,7 @@
         "component": "reference",
         "valueType": "string",
         "name": "placeholder_image",
-        "label": "Image",
+        "label": "Placeholder Image",
         "multi": false
       },
       {
@@ -336,7 +336,7 @@
         "valueType": "string",
         "name": "placeholder_imageAlt",
         "value": "",
-        "label": "Image Alt Text"
+        "label": "Placeholder Image Alt Text"
       }
     ]
   }
