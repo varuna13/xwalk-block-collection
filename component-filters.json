@@ -28,7 +28,8 @@
       "hero",
       "cards",
       "columns",
-      "accordion"
+      "accordion",
+      "tabs"
     ]
   },
   {
@@ -41,6 +42,12 @@
     "id": "accordion",
     "components": [
       "accordion-item"
+    ]
+  },
+  {
+    "id": "tabs",
+    "components": [
+      "tabs-item"
     ]
   }
 ]

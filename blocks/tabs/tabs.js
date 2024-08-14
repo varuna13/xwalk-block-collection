@@ -1,5 +1,6 @@
 // eslint-disable-next-line import/no-unresolved
 import { toClassName } from '../../scripts/aem.js';
+import { moveInstrumentation } from '../../scripts/scripts.js';
 
 function hasWrapper(el) {
   return !!el.firstElementChild && window.getComputedStyle(el.firstElementChild).display === 'block';
@@ -31,6 +32,9 @@ export default async function decorate(block) {
     const button = document.createElement('button');
     button.className = 'tabs-tab';
     button.id = `tab-${id}`;
+
+    moveInstrumentation(tab, button);
+    moveInstrumentation(tab.parentElement, tabpanel.lastElementChild);
     button.innerHTML = tab.innerHTML;
     button.setAttribute('aria-controls', `tabpanel-${id}`);
     button.setAttribute('aria-selected', !i);
