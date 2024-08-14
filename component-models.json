@@ -214,5 +214,30 @@
         "valueType": "string"
       }
     ]
+  },
+  {
+    "id":"embed",
+    "fields":[
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "uri",
+        "label": "URI"
+      },
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "placeholder_image",
+        "label": "Placeholder Image",
+        "multi": false
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "placeholder_imageAlt",
+        "value": "",
+        "label": "Placeholder Image Alt Text"
+      }
+    ]
   }
 ]

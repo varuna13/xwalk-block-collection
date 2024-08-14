@@ -28,7 +28,8 @@
       "hero",
       "cards",
       "columns",
-      "accordion"
+      "accordion",
+      "embed"
     ]
   },
   {
@@ -42,5 +43,9 @@
     "components": [
       "accordion-item"
     ]
+  },
+  {
+    "id": "embed",
+    "components": []
   }
 ]
