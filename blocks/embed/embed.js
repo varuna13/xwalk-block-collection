@@ -73,7 +73,7 @@ const loadEmbed = (block, link, autoplay) => {
       embed: embedVimeo,
     },
     {
-      match: ['twitter', 'x'],
+      match: ['twitter', 'x.com'],
       embed: embedTwitter,
     },
   ];
