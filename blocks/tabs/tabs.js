@@ -33,9 +33,9 @@ export default async function decorate(block) {
     button.className = 'tabs-tab';
     button.id = `tab-${id}`;
 
-    moveInstrumentation(tab, button);
     moveInstrumentation(tab.parentElement, tabpanel.lastElementChild);
     button.innerHTML = tab.innerHTML;
+
     button.setAttribute('aria-controls', `tabpanel-${id}`);
     button.setAttribute('aria-selected', !i);
     button.setAttribute('role', 'tab');
@@ -52,6 +52,8 @@ export default async function decorate(block) {
     });
     tablist.append(button);
     tab.remove();
+    moveInstrumentation(button.querySelector('p'), null);
+
   });
 
   block.prepend(tablist);
