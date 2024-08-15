@@ -53,8 +53,8 @@ export default async function decorate(block) {
     const fragmentSection = fragment.querySelector(':scope .section');
     if (fragmentSection) {
       block.closest('.section').classList.add(...fragmentSection.classList);
-      moveInstrumentation(block, block.parentElement);
-      block.closest('.fragment-wrapper').after(...fragmentSection.childNodes);
+      moveInstrumentation(block, fragmentSection);
+      block.closest('.fragment').replaceWith(...fragment.childNodes);
     }
   }
 }
