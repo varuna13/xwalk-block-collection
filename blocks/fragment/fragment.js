@@ -51,7 +51,7 @@ export default async function decorate(block) {
     if (fragmentSection) {
       block.closest('.section').classList.add(...fragmentSection.classList);
       moveInstrumentation(block, fragmentSection);
-      block.closest('.fragment').replaceWith(...fragment.childNodes);
+      block.closest('.fragment').replaceWith(...fragmentSection.childNodes);
     }
   }
 }
