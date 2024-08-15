@@ -24,9 +24,9 @@ function setState(block, state) {
       details.open = state.includes(details.dataset.aueResource);
     });
   }
-  console.log(block,state);
+  console.log(block, state);
   if (block.matches('.fragment')) {
-    window.location.reload();
+    // window.location.reload();
   }
 }
 
@@ -60,7 +60,10 @@ async function applyChanges(event) {
       attachEventListners(newMain);
       return true;
     }
-
+    if (element.matches('.fragment-wrapper')) {
+      console.log('fragment update');
+      return false;
+    }
     const block = element.parentElement?.closest('.block[data-aue-resource]') || element?.closest('.block[data-aue-resource]');
     if (block) {
       const state = getState(block);
