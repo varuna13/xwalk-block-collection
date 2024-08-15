@@ -24,6 +24,7 @@ function setState(block, state) {
       details.open = state.includes(details.dataset.aueResource);
     });
   }
+  console.log(block,state);
   if (block.matches('.fragment')) {
     window.location.reload();
   }
