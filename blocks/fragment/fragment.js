@@ -43,8 +43,7 @@ export async function loadFragment(path) {
 }
 
 /**
- * 
- * @param {Element} block 
+ * @param {Element} block
  */
 export default async function decorate(block) {
   const link = block.querySelector('a');
