@@ -10,6 +10,19 @@ import {
 import { decorateRichtext } from './editor-support-rte.js';
 import { decorateMain } from './scripts.js';
 
+/**
+ *
+ * @param {Element} block
+ */
+function updateTableFilter(block) {
+  const columns = parseInt([...block.classList.values()]
+    .filter((x) => x.startsWith('columns-'))[0]?.split('-')?.[1]
+          || '1', 10);
+  if (columns > 1) {
+    block.setAttribute('data-aue-filter', `table-${columns}-rows`);
+  }
+}
+
 function getState(block) {
   if (block.matches('.accordion')) {
     return [...block.querySelectorAll('details[open]')]
@@ -24,12 +37,14 @@ function setState(block, state) {
       details.open = state.includes(details.dataset.aueResource);
     });
   }
+  if (block.matches('.table')) {
+    updateTableFilter(block);
+  }
 }
 
 async function applyChanges(event) {
   // redecorate default content and blocks on patches (in the properties rail)
   const { detail } = event;
-
   const resource = detail?.request?.target?.resource // update, patch components
     || detail?.request?.target?.container?.resource // update, patch, add to sections
     || detail?.request?.to?.container?.resource; // move in sections
@@ -142,3 +157,4 @@ function attachEventListners(main) {
 }
 
 attachEventListners(document.querySelector('main'));
+document.querySelectorAll('.block.table').forEach(updateTableFilter);

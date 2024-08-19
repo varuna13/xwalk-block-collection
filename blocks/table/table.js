@@ -4,7 +4,7 @@
  * https://www.hlx.live/developer/block-collection/table
  */
 
-import { moveInstrumentation} from '../../scripts/scripts.js';
+import { moveInstrumentation } from '../../scripts/scripts.js';
 
 /**
  *
