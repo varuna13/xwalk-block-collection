@@ -219,24 +219,24 @@
     "id":"embed",
     "fields":[
       {
-        "component": "text",
-        "valueType": "string",
-        "name": "uri",
-        "label": "URI"
-      },
-      {
         "component": "reference",
         "valueType": "string",
-        "name": "placeholder_image",
+        "name": "embed_placeholder",
         "label": "Placeholder Image",
         "multi": false
       },
       {
         "component": "text",
         "valueType": "string",
-        "name": "placeholder_imageAlt",
+        "name": "embed_placeholderAlt",
         "value": "",
         "label": "Placeholder Image Alt Text"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "embed_uri",
+        "label": "URI"
       }
     ]
   }
