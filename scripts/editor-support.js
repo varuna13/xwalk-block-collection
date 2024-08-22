@@ -56,9 +56,9 @@ async function applyChanges(event) {
       attachEventListners(newMain);
       return true;
     }
-    if (element.matches('.fragment-wrapper')) {
-      return false;
-    }
+    // if (element.matches('.fragment-wrapper')) {
+    //   return false;
+    // }
     const block = element.parentElement?.closest('.block[data-aue-resource]') || element?.closest('.block[data-aue-resource]');
     if (block) {
       const state = getState(block);
