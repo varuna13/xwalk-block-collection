@@ -154,6 +154,9 @@ function attachEventListners(main) {
   }));
 
   main?.addEventListener('aue:ui-select', handleSelection);
+  main?.addEventListener('extension:reload', (location) => {
+    window.location.href = location;
+  });
 }
 
 attachEventListners(document.querySelector('main'));
