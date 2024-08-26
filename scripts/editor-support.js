@@ -52,6 +52,13 @@ async function applyChanges(event) {
   const updates = detail?.response?.updates;
   if (!updates.length) return false;
   const { content } = updates[0];
+  const newLocation = detail?.request?.newLocation;
+  if (newLocation) {
+    // change the ref parameter in the URL to newRef
+    const aTag = document.createElement('a');
+    aTag.href = newLocation;
+    aTag.click();
+  }
   if (!content) return false;
 
   const parsedUpdate = new DOMParser().parseFromString(content, 'text/html');
