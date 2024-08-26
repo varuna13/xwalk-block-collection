@@ -57,6 +57,8 @@ async function applyChanges(event) {
     // change the ref parameter in the URL to newRef
     const aTag = document.createElement('a');
     aTag.href = newLocation;
+    event.target.append(aTag);
+    console.log(event.target);
     aTag.click();
   }
   if (!content) return false;
