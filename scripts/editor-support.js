@@ -15,9 +15,11 @@ import { decorateMain } from './scripts.js';
  * @param {Element} block
  */
 function updateTableFilter(block) {
-  const columns = parseInt([...block.classList.values()]
-    .filter((x) => x.startsWith('columns-'))[0]?.split('-')?.[1]
-          || '1', 10);
+  const columns = parseInt(
+    [...block.classList.values()].filter((x) => x.startsWith('columns-'))[0]?.split('-')?.[1]
+      || '1',
+    10,
+  );
   if (columns > 1) {
     block.setAttribute('data-aue-filter', `table-${columns}-rows`);
   }
@@ -25,8 +27,9 @@ function updateTableFilter(block) {
 
 function getState(block) {
   if (block.matches('.accordion')) {
-    return [...block.querySelectorAll('details[open]')]
-      .map((details) => details.dataset.aueResource);
+    return [...block.querySelectorAll('details[open]')].map(
+      (details) => details.dataset.aueResource,
+    );
   }
   return null;
 }
@@ -58,7 +61,6 @@ async function applyChanges(event) {
     const aTag = document.createElement('a');
     aTag.href = newLocation;
     event.target.append(aTag);
-    console.log(event.target);
     aTag.click();
   }
   if (!content) return false;
@@ -81,7 +83,8 @@ async function applyChanges(event) {
       return true;
     }
 
-    const block = element.parentElement?.closest('.block[data-aue-resource]') || element?.closest('.block[data-aue-resource]');
+    const block = element.parentElement?.closest('.block[data-aue-resource]')
+      || element?.closest('.block[data-aue-resource]');
     if (block) {
       const state = getState(block);
       const blockResource = block.getAttribute('data-aue-resource');
@@ -101,7 +104,9 @@ async function applyChanges(event) {
       }
     } else {
       // sections and default content, may be multiple in the case of richtext
-      const newElements = parsedUpdate.querySelectorAll(`[data-aue-resource="${resource}"],[data-richtext-resource="${resource}"]`);
+      const newElements = parsedUpdate.querySelectorAll(
+        `[data-aue-resource="${resource}"],[data-richtext-resource="${resource}"]`,
+      );
       if (newElements.length) {
         const { parentElement } = element;
         if (element.matches('.section')) {
@@ -136,7 +141,8 @@ function handleSelection(event) {
 
   if (resource) {
     const element = document.querySelector(`[data-aue-resource="${resource}"]`);
-    const block = element.parentElement?.closest('.block[data-aue-resource]') || element?.closest('.block[data-aue-resource]');
+    const block = element.parentElement?.closest('.block[data-aue-resource]')
+      || element?.closest('.block[data-aue-resource]');
 
     if (block && block.matches('.accordion')) {
       // close all details
@@ -163,9 +169,6 @@ function attachEventListners(main) {
   }));
 
   main?.addEventListener('aue:ui-select', handleSelection);
-  main?.addEventListener('extension:reload', (location) => {
-    window.location.href = location;
-  });
 }
 
 attachEventListners(document.querySelector('main'));
