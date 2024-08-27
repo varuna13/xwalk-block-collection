@@ -51,10 +51,7 @@ async function applyChanges(event) {
   const resource = detail?.request?.target?.resource // update, patch components
     || detail?.request?.target?.container?.resource // update, patch, add to sections
     || detail?.request?.to?.container?.resource; // move in sections
-  if (!resource) return false;
-  const updates = detail?.response?.updates;
-  if (!updates.length) return false;
-  const { content } = updates[0];
+
   const newLocation = detail?.request?.newLocation;
   if (newLocation) {
     // change the ref parameter in the URL to newRef
@@ -63,6 +60,10 @@ async function applyChanges(event) {
     event.target.append(aTag);
     aTag.click();
   }
+  if (!resource) return false;
+  const updates = detail?.response?.updates;
+  if (!updates.length) return false;
+  const { content } = updates[0];
   if (!content) return false;
 
   const parsedUpdate = new DOMParser().parseFromString(content, 'text/html');
