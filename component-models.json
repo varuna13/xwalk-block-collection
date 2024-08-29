@@ -273,6 +273,35 @@
             ]
           }
         ]
+      },
+      {
+        "component":"select",
+        "name":"filter",
+        "label":"Columns",
+        "valueType":"string",
+        "options":[
+          {
+            "name":"1 Column",
+            "value":"table"
+          },
+          {
+            "name":"2 Columns",
+            "value":"table-2-rows"
+          },
+          {
+            "name":"3 Columns",
+            "value":"table-3-rows"
+          },
+          {
+            "name":"4 Columns",
+            "value":"table-4-rows"
+          },
+          {
+            "name":"5 Columns",
+            "value":"table-5-rows"
+          }
+        ]
+
       }
     ]
   },

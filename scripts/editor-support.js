@@ -14,21 +14,6 @@ import { decorateMain } from './scripts.js';
 /**
  *
  * @param {Element} block
- */
-function updateTableFilter(block) {
-  const columns = parseInt(
-    [...block.classList.values()].filter((x) => x.startsWith('columns-'))[0]?.split('-')?.[1]
-      || '1',
-    10,
-  );
-  if (columns > 1) {
-    block.setAttribute('data-aue-filter', `table-${columns}-rows`);
-  }
-}
-
-/**
- *
- * @param {Element} block
  * @param {HTMLElement} block
  * Use this function to trigger a mutation for the UI editor overlay when you
  * have a scrollable block
@@ -57,9 +42,6 @@ function setState(block, state) {
     block.querySelectorAll('details').forEach((details) => {
       details.open = state.includes(details.dataset.aueResource);
     });
-  }
-  if (block.matches('.table')) {
-    updateTableFilter(block);
   }
   if (block.matches('.carousel')) {
     block.style.display = null;
@@ -199,4 +181,3 @@ function attachEventListners(main) {
 }
 
 attachEventListners(document.querySelector('main'));
-document.querySelectorAll('.block.table').forEach(updateTableFilter);
