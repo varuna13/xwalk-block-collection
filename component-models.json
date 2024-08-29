@@ -216,8 +216,20 @@
     ]
   },
   {
-    "id":"embed",
-    "fields":[
+    "id": "fragment",
+    "fields": [
+      {
+        "component": "aem-content",
+        "valueType": "string",
+        "name": "link",
+        "value": "",
+        "label": "Fragment Link"
+      }
+    ]
+  },
+  {
+    "id": "embed",
+    "fields": [
       {
         "component": "reference",
         "valueType": "string",
