@@ -286,19 +286,19 @@
           },
           {
             "name":"2 Columns",
-            "value":"table-2-rows"
+            "value":"table-2-columns"
           },
           {
             "name":"3 Columns",
-            "value":"table-3-rows"
+            "value":"table-3-columns"
           },
           {
             "name":"4 Columns",
-            "value":"table-4-rows"
+            "value":"table-4-columns"
           },
           {
             "name":"5 Columns",
-            "value":"table-5-rows"
+            "value":"table-5-columns"
           }
         ]
 
@@ -346,7 +346,7 @@
     ]
   },
   {
-    "id": "table-row-2",
+    "id": "table-col-2",
     "fields": [
       {
         "component": "richtext",
@@ -363,7 +363,7 @@
     ]
   },
   {
-    "id": "table-row-3",
+    "id": "table-col-3",
     "fields": [
       {
         "component": "richtext",
@@ -386,7 +386,7 @@
     ]
   },
   {
-    "id": "table-row-4",
+    "id": "table-col-4",
     "fields": [
       {
         "component": "richtext",
@@ -415,7 +415,7 @@
     ]
   },
   {
-    "id": "table-row-5",
+    "id": "table-col-5",
     "fields": [
       {
         "component": "richtext",

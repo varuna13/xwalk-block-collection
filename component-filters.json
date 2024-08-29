@@ -57,20 +57,20 @@
     "components":[]
   },
   {
-    "id":"table-2-rows",
-    "components":["table-row-2"]
+    "id":"table-2-columns",
+    "components":["table-col-2"]
   },
   {
-    "id":"table-3-rows",
-    "components":["table-row-3"]
+    "id":"table-3-columns",
+    "components":["table-col-3"]
   },
   {
-    "id":"table-4-rows",
-    "components":["table-row-4"]
+    "id":"table-4-columns",
+    "components":["table-col-4"]
   },
   {
-    "id":"table-5-rows",
-    "components":["table-row-5"]
+    "id":"table-5-columns",
+    "components":["table-col-5"]
   },
   {
     "id": "carousel",

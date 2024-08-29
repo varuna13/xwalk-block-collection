@@ -235,14 +235,14 @@
         },
         {
           "title": "Row",
-          "id": "table-row-2",
+          "id": "table-col-2",
           "plugins": {
             "xwalk": {
               "page": {
                 "resourceType": "core/franklin/components/block/v1/block/item",
                 "template": {
                   "name": "Row",
-                  "model": "table-row-2",
+                  "model": "table-col-2",
                   "column1text" : "Column1",
                   "column2text": "Column2"
                 }
@@ -252,14 +252,14 @@
         },
         {
           "title": "Row",
-          "id": "table-row-3",
+          "id": "table-col-3",
           "plugins": {
             "xwalk": {
               "page": {
                 "resourceType": "core/franklin/components/block/v1/block/item",
                 "template": {
                   "name": "Row",
-                  "model": "table-row-3",
+                  "model": "table-col-3",
                   "column1text" : "Column1",
                   "column2text": "Column2",
                   "column3text": "Column3"
@@ -270,14 +270,14 @@
         },
         {
           "title": "Row",
-          "id": "table-row-4",
+          "id": "table-col-4",
           "plugins": {
             "xwalk": {
               "page": {
                 "resourceType": "core/franklin/components/block/v1/block/item",
                 "template": {
                   "name": "Row",
-                  "model": "table-row-4",
+                  "model": "table-col-4",
                   "column1text" : "Column1",
                   "column2text": "Column2",
                   "column3text": "Column3",
@@ -289,14 +289,14 @@
         },
         {
           "title": "Row",
-          "id": "table-row-5",
+          "id": "table-col-5",
           "plugins": {
             "xwalk": {
               "page": {
                 "resourceType": "core/franklin/components/block/v1/block/item",
                 "template": {
                   "name": "Row",
-                  "model": "table-row-5",
+                  "model": "table-col-5",
                   "column1text" : "Column1",
                   "column2text": "Column2",
                   "column3text": "Column3",
