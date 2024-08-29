@@ -1,3 +1,4 @@
+import { showSlide } from '../blocks/carousel/carousel.js';
 import {
   decorateBlock,
   decorateBlocks,
@@ -25,11 +26,28 @@ function updateTableFilter(block) {
   }
 }
 
+/**
+ *
+ * @param {Element} block
+ * @param {HTMLElement} block
+ * Use this function to trigger a mutation for the UI editor overlay when you
+ * have a scrollable block
+ */
+function createMutation(block) {
+  block.setAttribute('xwalk-scroll-mutation', 'true');
+  block.querySelector('.carousel-slides').onscrollend = () => {
+    block.removeAttribute('xwalk-scroll-mutation');
+  };
+}
+
 function getState(block) {
   if (block.matches('.accordion')) {
     return [...block.querySelectorAll('details[open]')].map(
       (details) => details.dataset.aueResource,
     );
+  }
+  if (block.matches('.carousel')) {
+    return block.dataset.activeSlide;
   }
   return null;
 }
@@ -42,6 +60,11 @@ function setState(block, state) {
   }
   if (block.matches('.table')) {
     updateTableFilter(block);
+  }
+  if (block.matches('.carousel')) {
+    block.style.display = null;
+    createMutation(block);
+    showSlide(block, state);
   }
 }
 
@@ -74,9 +97,10 @@ async function applyChanges(event) {
       attachEventListners(newMain);
       return true;
     }
-
-    const block = element.parentElement?.closest('.block[data-aue-resource]')
-      || element?.closest('.block[data-aue-resource]');
+    if (element.matches('.fragment-wrapper')) {
+      return false;
+    }
+    const block = element.parentElement?.closest('.block[data-aue-resource]') || element?.closest('.block[data-aue-resource]');
     if (block) {
       const state = getState(block);
       const blockResource = block.getAttribute('data-aue-resource');
@@ -143,6 +167,17 @@ function handleSelection(event) {
       });
       const details = element.matches('details') ? element : element.querySelector('details');
       details.open = true;
+    }
+
+    if (block && block.matches('.carousel')) {
+      createMutation(block);
+    }
+    if (block && block.matches('.tabs')) {
+      const tabs = [...block.querySelectorAll('.tabs-panel > div')];
+      const index = tabs.findIndex((tab) => tab.dataset.aueResource === resource);
+      if (index !== -1) {
+        block.querySelectorAll('.tabs-list button')[index]?.click();
+      }
     }
   }
 }
