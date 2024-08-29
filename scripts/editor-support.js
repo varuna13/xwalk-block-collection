@@ -78,7 +78,9 @@ async function applyChanges(event) {
       attachEventListners(newMain);
       return true;
     }
-
+    if (element.matches('.fragment-wrapper')) {
+      return false;
+    }
     const block = element.parentElement?.closest('.block[data-aue-resource]') || element?.closest('.block[data-aue-resource]');
     if (block) {
       const state = getState(block);
@@ -147,6 +149,13 @@ function handleSelection(event) {
 
     if (block && block.matches('.carousel')) {
       createMutation(block);
+    }
+    if (block && block.matches('.tabs')) {
+      const tabs = [...block.querySelectorAll('.tabs-panel > div')];
+      const index = tabs.findIndex((tab) => tab.dataset.aueResource === resource);
+      if (index !== -1) {
+        block.querySelectorAll('.tabs-list button')[index]?.click();
+      }
     }
   }
 }
