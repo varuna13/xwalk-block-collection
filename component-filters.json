@@ -1,9 +1,7 @@
 [
   {
     "id": "main",
-    "components": [
-      "section"
-    ]
+    "components": ["section"]
   },
   {
     "id": "columns",
@@ -11,12 +9,7 @@
   },
   {
     "id": "column",
-    "components": [
-      "text",
-      "image",
-      "button",
-      "title"
-    ]
+    "components": ["text", "image", "button", "title"]
   },
   {
     "id": "section",
@@ -30,14 +23,14 @@
       "columns",
       "accordion",
       "tabs",
+      "fragment",
+      "embed",
       "quote"
     ]
   },
   {
     "id": "cards",
-    "components": [
-      "card"
-    ]
+    "components": ["card"]
   },
   {
     "id": "accordion",
@@ -50,5 +43,9 @@
     "components": [
       "tabs-item"
     ]
+  },
+  {
+    "id": "embed",
+    "components": []
   }
 ]
