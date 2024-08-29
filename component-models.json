@@ -279,6 +279,7 @@
         "name":"filter",
         "label":"Columns",
         "valueType":"string",
+        "value":"table",
         "options":[
           {
             "name":"1 Column",
