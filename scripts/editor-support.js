@@ -124,6 +124,13 @@ function handleSelection(event) {
       const details = element.matches('details') ? element : element.querySelector('details');
       details.open = true;
     }
+    if (block && block.matches('.tabs')) {
+      const tabs = [...block.querySelectorAll('.tabs-panel > div')];
+      const index = tabs.findIndex((tab) => tab.dataset.aueResource === resource);
+      if (index !== -1) {
+        block.querySelectorAll('.tabs-list button')[index]?.click();
+      }
+    }
   }
 }
 
