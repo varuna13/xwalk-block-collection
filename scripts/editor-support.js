@@ -13,6 +13,7 @@ import { decorateMain } from './scripts.js';
 
 /**
  *
+ * @param {Element} block
  * @param {HTMLElement} block
  * Use this function to trigger a mutation for the UI editor overlay when you
  * have a scrollable block
@@ -26,8 +27,9 @@ function createMutation(block) {
 
 function getState(block) {
   if (block.matches('.accordion')) {
-    return [...block.querySelectorAll('details[open]')]
-      .map((details) => details.dataset.aueResource);
+    return [...block.querySelectorAll('details[open]')].map(
+      (details) => details.dataset.aueResource,
+    );
   }
   if (block.matches('.carousel')) {
     return block.dataset.activeSlide;
@@ -51,7 +53,6 @@ function setState(block, state) {
 async function applyChanges(event) {
   // redecorate default content and blocks on patches (in the properties rail)
   const { detail } = event;
-
   const resource = detail?.request?.target?.resource // update, patch components
     || detail?.request?.target?.container?.resource // update, patch, add to sections
     || detail?.request?.to?.container?.resource; // move in sections
@@ -101,7 +102,9 @@ async function applyChanges(event) {
       }
     } else {
       // sections and default content, may be multiple in the case of richtext
-      const newElements = parsedUpdate.querySelectorAll(`[data-aue-resource="${resource}"],[data-richtext-resource="${resource}"]`);
+      const newElements = parsedUpdate.querySelectorAll(
+        `[data-aue-resource="${resource}"],[data-richtext-resource="${resource}"]`,
+      );
       if (newElements.length) {
         const { parentElement } = element;
         if (element.matches('.section')) {
@@ -136,7 +139,8 @@ function handleSelection(event) {
 
   if (resource) {
     const element = document.querySelector(`[data-aue-resource="${resource}"]`);
-    const block = element.parentElement?.closest('.block[data-aue-resource]') || element?.closest('.block[data-aue-resource]');
+    const block = element.parentElement?.closest('.block[data-aue-resource]')
+      || element?.closest('.block[data-aue-resource]');
 
     if (block && block.matches('.accordion')) {
       // close all details
