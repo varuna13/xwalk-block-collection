@@ -446,6 +446,17 @@ function decorateButtons(element) {
           a.className = 'button secondary';
           twoup.classList.add('button-container');
         }
+        if (
+          up.childNodes.length === 1
+          && up.tagName === 'EM'
+          && twoup.childNodes.length === 1
+          && twoup.tagName === 'STRONG'
+          && threeup.childNodes.length === 1
+          && threeup.tagName === 'P'
+        ) {
+          a.className = 'button tertiary';
+          threeup.classList.add('button-container');
+        }      
       }
     }
   });
