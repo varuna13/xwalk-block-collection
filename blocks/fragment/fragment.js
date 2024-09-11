@@ -20,8 +20,8 @@ import {
  */
 export async function loadFragment(path) {
   if (path && path.startsWith('/')) {
-    if(path.endsWith(".html")){
-      path.replace(".html", "");
+    if (path.endsWith('.html')) {
+      path = path.replace('.html', '');
     }
     const resp = await fetch(`${path}.plain.html`);
     if (resp.ok) {
