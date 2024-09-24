@@ -55,7 +55,7 @@
       {
         "component": "aem-content",
         "valueType": "string",
-        "name": "Canonical Url",
+        "name": "cq:canonicalUrl",
         "multi": false,
         "label": "Canonical URL",
         "description": "Sets the canonical URL in page meta."
