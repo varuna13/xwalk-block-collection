@@ -35,10 +35,66 @@
         "label": "Keywords",
         "description": "Sets the keywords of the page in page meta.",
         "multi": true
+      },
+      {
+        "component": "aem-tag",
+        "valueType": "string",
+        "name": "cq:tags",
+        "label": "Tags",
+        "rootPath": "/content/cq:tags",
+        "description": "Sets the tags in page meta."
+      },
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "fileReference",
+        "label": "Image",
+        "rootPath": "/content/dam/wknd/en",
+        "multi": false
+      },
+      {
+        "component": "aem-content",
+        "valueType": "string",
+        "name": "Canonical Url",
+        "multi": false,
+        "label": "Canonical URL",
+        "description": "Sets the canonical URL in page meta."
+      },
+
+      {
+        "component": "multiselect",
+        "name": "cq:robotsTags",
+        "value": "",
+        "label": "Robots Tags",
+        "valueType": "string",
+        "description": "Sets the robots tags in page meta",
+        "options": [
+          {
+            "name": "index",
+            "value": "index"
+          },
+          {
+            "name": "noindex",
+            "value": "noindex"
+          },
+          {
+            "name": "follow",
+            "value": "follow"
+          },
+          {
+            "name": "nofollow",
+            "value": "nofollow"
+          },
+          {
+            "name": "noarchive",
+            "value": "noarchive"
+          },
+          {
+            "name": "nosnippet",
+            "value": "nosnippet"
+          }
+        ]
       }
-
-
-
     ]
   },
   {
@@ -307,34 +363,33 @@
         ]
       },
       {
-        "component":"select",
-        "name":"filter",
-        "label":"Columns",
-        "valueType":"string",
-        "value":"table",
-        "options":[
+        "component": "select",
+        "name": "filter",
+        "label": "Columns",
+        "valueType": "string",
+        "value": "table",
+        "options": [
           {
-            "name":"1 Column",
-            "value":"table"
+            "name": "1 Column",
+            "value": "table"
           },
           {
-            "name":"2 Columns",
-            "value":"table-2-columns"
+            "name": "2 Columns",
+            "value": "table-2-columns"
           },
           {
-            "name":"3 Columns",
-            "value":"table-3-columns"
+            "name": "3 Columns",
+            "value": "table-3-columns"
           },
           {
-            "name":"4 Columns",
-            "value":"table-4-columns"
+            "name": "4 Columns",
+            "value": "table-4-columns"
           },
           {
-            "name":"5 Columns",
-            "value":"table-5-columns"
+            "name": "5 Columns",
+            "value": "table-5-columns"
           }
         ]
-
       }
     ]
   },
