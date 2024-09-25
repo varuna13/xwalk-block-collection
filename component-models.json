@@ -47,9 +47,8 @@
       {
         "component": "reference",
         "valueType": "string",
-        "name": "fileReference",
+        "name": "image",
         "label": "Image",
-        "rootPath": "/content/dam/wknd/en",
         "multi": false
       },
       {
